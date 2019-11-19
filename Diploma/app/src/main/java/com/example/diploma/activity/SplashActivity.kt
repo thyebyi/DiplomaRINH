@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.ProgressBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.diploma.utilities.ActivityUtilities
 
 
 class SplashActivity : AppCompatActivity() {
@@ -50,9 +51,11 @@ class SplashActivity : AppCompatActivity() {
                 }
 
                 override fun onAnimationEnd(animation: Animation) {
-//                ActivityUtilities.getInstance()
-//                    .invokeNewActivity(this@SplashActivity, MainActivity::class.java, true)
-
+                    val activityUtilities : ActivityUtilities? = null
+                    activityUtilities!!.getInstance().invokeNewActivity(
+                        this@SplashActivity,
+                        MainActivity::class.java, true
+                    )
                 }
 
                 override fun onAnimationRepeat(animation: Animation) {
